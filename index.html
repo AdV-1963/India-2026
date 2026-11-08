@@ -130,11 +130,7 @@ html{overflow-x:clip}
 .band figure,.band .pair,.band .trio{margin-top:0;margin-bottom:0}
 .band .pair+.pair,.band .trio+.pair{margin-top:clamp(10px,2vw,20px)}
 .band figcaption{color:#d6d3cc;border-left-color:var(--turmeric)}
-</style><style>#spb{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:41;display:flex;align-items:center;gap:8px;background:rgba(8,10,24,.82);color:#fff;border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 14px 8px 10px;font-family:var(--ui);font-size:.78rem;letter-spacing:.06em;cursor:pointer;backdrop-filter:blur(6px)}
-#spb .ic{display:inline-flex;width:26px;height:26px;border-radius:50%;background:var(--turmeric);align-items:center;justify-content:center;font-size:.85rem}
-#spp{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(max(14px,env(safe-area-inset-bottom,0px)) + 52px);z-index:40;width:min(360px,calc(100vw - 28px));display:none;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35)}
-#spp{background:#121212}#spp .spo{display:block;padding:10px 14px;background:#1db954;color:#000;font-family:var(--ui);font-size:.8rem;font-weight:600;text-decoration:none;text-align:center}#spp.on{display:block}#spp iframe{display:block;width:100%;aspect-ratio:16/9;height:auto;border:0}
-#lbx.on~#spb,#lbx.on~#spp{display:none}</style>
+</style>
 </head>
 <body>
 <div class="wrap">
@@ -967,8 +963,6 @@ html{overflow-x:clip}
 [].forEach.call(document.querySelectorAll('.langsw button'),function(b){b.addEventListener('click',function(){setL(b.getAttribute('data-set'))})});setL(H.getAttribute('data-lang')||'es');
 var x=document.getElementById('lbx'),im=x.querySelector('img'),L=[],c=-1;function sh(i){if(i<0||i>=L.length)return;c=i;im.src=L[i].href;x.classList.add('on')}
 document.addEventListener('click',function(ev){var a=ev.target.closest&&ev.target.closest('a.lb');if(!a)return;ev.preventDefault();var box=a.closest('[data-l]');L=[].slice.call(box.querySelectorAll('a.lb'));sh(L.indexOf(a))});
-x.addEventListener('click',function(ev){if(ev.target.tagName=='BUTTON'){sh(c+(ev.target.className=='nx'?1:-1));return}x.classList.remove('on')});document.addEventListener('keydown',function(ev){if(!x.classList.contains('on'))return;if(ev.key=='Escape')x.classList.remove('on');if(ev.key=='ArrowRight')sh(c+1);if(ev.key=='ArrowLeft')sh(c-1)});var sx=0;x.addEventListener('touchstart',function(ev){sx=ev.touches[0].clientX},{passive:true});x.addEventListener('touchend',function(ev){var d=ev.changedTouches[0].clientX-sx;if(Math.abs(d)>50){sh(c+(d<0?1:-1))}})})();</script><div id="spp"></div><button id="spb" type="button" aria-expanded="false"><span class="ic">&#9835;</span><span class="tt">Música</span></button><script>(function(){var b=document.getElementById('spb'),p=document.getElementById('spp'),t=b.querySelector('.tt'),L={es:['Música','Cerrar','Abrir en Spotify · canciones enteras ↗'],sl:['Glasba','Zapri','Odpri v Spotifyju · cele pesmi ↗']};function lg(){return document.documentElement.getAttribute('data-lang')==='sl'?'sl':'es'}function ui(){var o=p.classList.contains('on');t.textContent=L[lg()][o?1:0];b.setAttribute('aria-expanded',o)}
-b.addEventListener('click',function(){if(!p.querySelector('iframe')){var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/FXiaIH49oAU?playlist=YR12Z8f1Dh8,ASgA6NT3_9g,9MX-QejdVaQ,NcxgBBxE17Q,79IEesucPo8&autoplay=1&rel=0';f.allow='autoplay; encrypted-media; fullscreen; picture-in-picture';f.allowFullscreen=true;f.title='YouTube';p.appendChild(f)}p.classList.toggle('on');ui()});
-[].forEach.call(document.querySelectorAll('.langsw button'),function(x){x.addEventListener('click',function(){setTimeout(ui,0)})});ui()})();</script>
+x.addEventListener('click',function(ev){if(ev.target.tagName=='BUTTON'){sh(c+(ev.target.className=='nx'?1:-1));return}x.classList.remove('on')});document.addEventListener('keydown',function(ev){if(!x.classList.contains('on'))return;if(ev.key=='Escape')x.classList.remove('on');if(ev.key=='ArrowRight')sh(c+1);if(ev.key=='ArrowLeft')sh(c-1)});var sx=0;x.addEventListener('touchstart',function(ev){sx=ev.touches[0].clientX},{passive:true});x.addEventListener('touchend',function(ev){var d=ev.changedTouches[0].clientX-sx;if(Math.abs(d)>50){sh(c+(d<0?1:-1))}})})();</script>
 </body>
 </html>
